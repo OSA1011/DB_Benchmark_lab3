@@ -2,7 +2,7 @@ import sqlite3
 import csv
 
 
-size = "tiny"
+size = "big"
 def Q1_SQLite():
     connection = sqlite3.connect(f'nyc_yellow_{size}.db')
     cursor = connection.cursor()
@@ -81,4 +81,4 @@ def connect():
     connection.close()
     #Q4_SQLite()
     #(i['\"Unnamed: 0\"'],
-#connect()
+connect()

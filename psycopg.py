@@ -1,7 +1,7 @@
 import psycopg2
 
 
-size = "tiny"
+size = "big"
 def Q1_Psycopg():
     with connection.cursor() as cursor:
         q1 = f"SELECT vendorid, count(*) FROM nyc_yellow_{size} GROUP BY 1;"
@@ -40,7 +40,7 @@ connection = psycopg2.connect( database='postgres',
                                password='Arnautov3011',
                                host='localhost')
 
-def open():
+def connecting():
     with connection.cursor() as cursor:
         cursor.execute(f"""CREATE TABLE IF NOT EXISTS nyc_yellow_{size} 
                                         (\"Unnamed: 0\" int,
@@ -71,4 +71,5 @@ def open():
                               DELIMITER ',' 
                               CSV HEADER;''', csvf)
         connection.commit()
-        connection.close()
+        #connection.close()
+connecting()

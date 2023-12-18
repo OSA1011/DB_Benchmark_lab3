@@ -1,7 +1,7 @@
 import duckdb
 
 
-size = "tiny"
+size = "big"
 def Q1_DuckDB():
     a = duckdb.sql(f"SELECT vendorid, count(*) FROM 'nyc_yellow_{size}.csv' GROUP BY 1").fetchall()
 

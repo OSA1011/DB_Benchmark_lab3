@@ -1,6 +1,6 @@
 import pandas as pd
 import time
-size = "tiny"
+size = "big"
 pd.options.mode.chained_assignment = None
 trips = pd.read_csv(f"nyc_yellow_{size}.csv")
 

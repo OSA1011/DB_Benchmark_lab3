@@ -1,7 +1,10 @@
 import pandas as pd
 import time
+size = "tiny"
 pd.options.mode.chained_assignment = None
-trips = pd.read_csv("nyc_yellow_tiny.csv")
+trips = pd.read_csv(f"nyc_yellow_{size}.csv")
+
+
 
 def Q1_Pandas():
     selected_df = trips[['VendorID']]

@@ -1,3 +1,6 @@
 .idea/
 nyc_yellow_tiny.csv
 DB_Browser.db
+nyc_yellow_tiny.db
+nyc_yellow_big.csv
+nyc_yellow_big.db

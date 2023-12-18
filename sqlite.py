@@ -4,7 +4,7 @@ import csv
 
 size = "tiny"
 def Q1_SQLite():
-    connection = sqlite3.connect('nyc_yellow_tiny.db')
+    connection = sqlite3.connect(f'nyc_yellow_{size}.db')
     cursor = connection.cursor()
     query = f"SELECT vendorid, count(*) FROM nyc_yellow_{size} GROUP BY 1;"
     cursor.execute(query)
@@ -12,7 +12,7 @@ def Q1_SQLite():
     connection.close()
 
 def Q2_SQLite():
-    connection = sqlite3.connect('nyc_yellow_tiny.db')
+    connection = sqlite3.connect(f'nyc_yellow_{size}.db')
     cursor = connection.cursor()
     query = f"SELECT passenger_count, avg(total_amount) FROM nyc_yellow_{size} GROUP BY 1;"
     cursor.execute(query)
@@ -20,7 +20,7 @@ def Q2_SQLite():
     connection.close()
 
 def Q3_SQLite():
-    connection = sqlite3.connect('nyc_yellow_tiny.db')
+    connection = sqlite3.connect(f'nyc_yellow_{size}.db')
     cursor = connection.cursor()
     query = f"SELECT passenger_count, strftime('%Y', tpep_pickup_datetime), count(*) FROM nyc_yellow_{size} GROUP BY 1, 2;"
     cursor.execute(query)
@@ -28,7 +28,7 @@ def Q3_SQLite():
     connection.close()
 
 def Q4_SQLite():
-    connection = sqlite3.connect('nyc_yellow_tiny.db')
+    connection = sqlite3.connect(f'nyc_yellow_{size}.db')
     cursor = connection.cursor()
     query = f"SELECT passenger_count, strftime('%Y', tpep_pickup_datetime), round(trip_distance), count(*) FROM nyc_yellow_{size} GROUP BY 1, 2, 3 ORDER BY 2, 4 desc;"
     cursor.execute(query)
@@ -39,7 +39,7 @@ def Q4_SQLite():
 
 # Устанавливаем соединение с базой данных
 def connect():
-    connection = sqlite3.connect('nyc_yellow_tiny.db')
+    connection = sqlite3.connect(f'nyc_yellow_{size}.db')
     cursor = connection.cursor()
 
     cursor.execute(f'''
@@ -81,3 +81,4 @@ def connect():
     connection.close()
     #Q4_SQLite()
     #(i['\"Unnamed: 0\"'],
+#connect()
